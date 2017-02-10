@@ -34,7 +34,7 @@ module LitmosClient
     end
 
     def update_user(id, options={})
-      put("users/#{id}", params)
+      put("users/#{id}", options)
     end
   end
 end
