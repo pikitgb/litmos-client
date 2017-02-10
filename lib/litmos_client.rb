@@ -81,7 +81,11 @@ module LitmosClient
         :accept => :json, 
       }
 
-      RestClient.post("#{@litmosURL}/#{path}#{query_string}", params.to_json, options) do |response, request, result|
+      
+      url_post = "#{@litmosURL}/#{path}#{query_string}"
+      puts "url post is: #{url_post}"
+      
+      RestClient.post(url_post, params.to_json, options) do |response, request, result|
         case response.code
         when 200, 201 
           # 200 Success. User/Course etc updated, deleted or retrieved
